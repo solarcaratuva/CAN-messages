@@ -3,12 +3,12 @@ proto motor_controller
 option c.name_prefix = "Bitproto"
 
 message MotorControllerFrameRequest {
-    bool frame0 = 1;
-    bool frame1 = 2;
-    bool frame2 = 3;
+    bool power_status_frame = 1;
+    bool drive_status_frame = 2;
+    bool errors_frame = 3;
 }
 
-message MotorControllerFrame0 {
+message MotorControllerPowerStatus {
     uint10 battery_voltage = 1;
     uint9 battery_current = 2;
     bool battery_current_direction = 3;
@@ -19,7 +19,7 @@ message MotorControllerFrame0 {
     uint7 advanced_lead_angle = 8;
 }
 
-message MotorControllerFrame1 {
+message MotorControllerDriveStatus {
     bool power_eco = 1;
     bool control_mode = 2;
     uint10 acceleration_vr_position = 3;
@@ -30,7 +30,7 @@ message MotorControllerFrame1 {
     bool drive_regen = 8;
 }
 
-message MotorControllerFrame2 {
+message MotorControllerError {
     bool analog_sensor_error = 1;
     bool motor_current_sensor_u_error = 2;
     bool motor_current_sensor_w_error = 3;

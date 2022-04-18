@@ -2,7 +2,7 @@ proto power_aux
 
 option c.name_prefix = "Bitproto"
 
-message PowerAuxErrorStruct {
+message PowerAuxError {
     bool fan_error = 1;
     bool brake_light_error = 2;
     bool headlight_error = 3;

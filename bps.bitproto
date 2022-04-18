@@ -2,7 +2,7 @@ proto bps
 
 option c.name_prefix = "Bitproto"
 
-message PackInformation {
+message BPSPackInformation {
     uint16 pack_voltage = 1;
     uint16 pack_current = 2;
     uint8 pack_soc = 3;
@@ -33,14 +33,14 @@ message PackInformation {
     bool charge_relay = 26;
 }
 
-message CellVoltage {
+message BPSCellVoltage {
     uint16 low_cell_voltage = 1;
     uint8 low_cell_voltage_id = 2;
     uint16 high_cell_voltage = 3;
     uint8 high_cell_voltage_id = 4;
 }
 
-message CellTemperature {
+message BPSCellTemperature {
     uint8 low_temperature = 1;
     uint8 low_thermistor_id = 2;
     uint8 high_temperature = 3;
