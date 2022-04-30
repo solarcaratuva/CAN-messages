@@ -1,0 +1,48 @@
+proto id
+
+// Message IDs
+// CAN 2.0A message IDs are 11 bits long; lower IDs represent higher priority.
+// Our custom scheme for assigning IDs is as follows:
+// 
+// Upper 3 bits = Message type
+//     1 = Errors
+//     2 = Critical functions
+//     3 = Non-critical functions
+//     4 = Diagnostic information
+// 
+// Middle 4 bits = Counter
+//     Incremented for each message within type based on relative priority
+// 
+// Lower 4 bits = Node ID
+//     1 = ECU
+//     2 = Motor
+//     3 = PowerAux
+//     4 = Solar
+//     5 = MotorController
+//     6 = BPS
+// 
+// For example, the ECUPowerAuxCommands message has an ID of 0x301
+// (node ID = 1, counter = 0, message type = 3).
+
+// Errors ---------------------------------------
+BPSError_MESSAGE_ID =                       0x106
+MotorControllerError_MESSAGE_ID =           0x115
+PowerAuxError_MESSAGE_ID =                  0x123
+
+// Critical functions ---------------------------
+ECUMotorCommands_MESSAGE_ID =               0x201
+
+// Non-critical functions -----------------------
+ECUPowerAuxCommands_MESSAGE_ID =            0x301
+MotorControllerDriveStatus_MESSAGE_ID =     0x315
+MotorControllerPowerStatus_MESSAGE_ID =     0x325
+
+// Diagnostic information -----------------------
+BPSPackInformation_MESSAGE_ID =             0x406
+BPSCellVoltage_MESSAGE_ID =                 0x416
+BPSCellTemperature_MESSAGE_ID =             0x426
+
+SolarCurrent_MESSAGE_ID =                   0x434
+SolarVoltage_MESSAGE_ID =                   0x444
+SolarTemp_MESSAGE_ID =                      0x454
+SolarPhoto_MESSAGE_ID =                     0x464
