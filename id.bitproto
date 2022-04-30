@@ -24,25 +24,25 @@ proto id
 // For example, the ECUPowerAuxCommands message has an ID of 0x301
 // (node ID = 1, counter = 0, message type = 3).
 
-// Errors ---------------------------------------
-BPSError_MESSAGE_ID =                       0x106
-MotorControllerError_MESSAGE_ID =           0x115
-PowerAuxError_MESSAGE_ID =                  0x123
+// Errors -------------------------------------------
+const BPSError_MESSAGE_ID =                     0x106
+const MotorControllerError_MESSAGE_ID =         0x115
+const PowerAuxError_MESSAGE_ID =                0x123
 
-// Critical functions ---------------------------
-ECUMotorCommands_MESSAGE_ID =               0x201
+// Critical functions -------------------------------
+const ECUMotorCommands_MESSAGE_ID =             0x201
 
-// Non-critical functions -----------------------
-ECUPowerAuxCommands_MESSAGE_ID =            0x301
-MotorControllerDriveStatus_MESSAGE_ID =     0x315
-MotorControllerPowerStatus_MESSAGE_ID =     0x325
+// Non-critical functions ---------------------------
+const ECUPowerAuxCommands_MESSAGE_ID =          0x301
+const MotorControllerDriveStatus_MESSAGE_ID =   0x315
+const MotorControllerPowerStatus_MESSAGE_ID =   0x325
 
-// Diagnostic information -----------------------
-BPSPackInformation_MESSAGE_ID =             0x406
-BPSCellVoltage_MESSAGE_ID =                 0x416
-BPSCellTemperature_MESSAGE_ID =             0x426
+// Diagnostic information ---------------------------
+const BPSPackInformation_MESSAGE_ID =           0x406
+const BPSCellVoltage_MESSAGE_ID =               0x416
+const BPSCellTemperature_MESSAGE_ID =           0x426
 
-SolarCurrent_MESSAGE_ID =                   0x434
-SolarVoltage_MESSAGE_ID =                   0x444
-SolarTemp_MESSAGE_ID =                      0x454
-SolarPhoto_MESSAGE_ID =                     0x464
+const SolarCurrent_MESSAGE_ID =                 0x434
+const SolarVoltage_MESSAGE_ID =                 0x444
+const SolarTemp_MESSAGE_ID =                    0x454
+const SolarPhoto_MESSAGE_ID =                   0x464
