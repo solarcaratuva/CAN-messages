@@ -41,7 +41,6 @@ const MotorControllerPowerStatus_MESSAGE_ID =   0x325
 const BPSPackInformation_MESSAGE_ID =           0x406
 const BPSCellVoltage_MESSAGE_ID =               0x416
 const BPSCellTemperature_MESSAGE_ID =           0x426
-
 const SolarCurrent_MESSAGE_ID =                 0x434
 const SolarVoltage_MESSAGE_ID =                 0x444
 const SolarTemp_MESSAGE_ID =                    0x454
