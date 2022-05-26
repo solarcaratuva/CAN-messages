@@ -41,9 +41,9 @@ BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ NewSignal_0039 : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 818 MotorControllerFrameRequest: 1 Motor
- SG_ Req_Frm0 : 0|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ Req_Frm1 : 1|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ Req_Frm2 : 2|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ power_status_frame : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ drive_status_frame : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ error_frame : 2|1@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 805 MotorControllerPowerStatus: 8 MotorController
  SG_ battery_voltage : 0|10@1+ (1,0) [0|0] "" Vector__XXX
