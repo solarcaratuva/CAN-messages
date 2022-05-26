@@ -72,7 +72,7 @@ BO_ 262 BPSError: 3 BPS
  SG_ high_voltage_isolation_fault : 13|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ power_supply_12v_fault : 14|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ charge_limit_enforcement_fault : 15|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ discharge_limit_enforcement_faul : 16|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ discharge_limit_enforcement_fault : 16|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ charger_safety_relay_fault : 17|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ internal_memory_fault : 18|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ internal_thermistor_fault : 19|1@1+ (1,0) [0|0] "" Vector__XXX
