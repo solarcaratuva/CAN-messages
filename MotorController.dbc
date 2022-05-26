@@ -33,19 +33,19 @@ NS_ :
 
 BS_:
 
-BU_: Logger RearLeft1 RearRight1 FrontLeft1 FrontRight1
+BU_: Motor MotorController
 
 
 BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ RFU : 32|8@1+ (1,0) [0|0] "" Vector__XXX
  SG_ NewSignal_0039 : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2297992512 Log_Req_RL1: 1 Logger
+BO_ 818 MotorControllerFrameRequest: 1 Motor
  SG_ Req_Frm0 : 0|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ Req_Frm1 : 1|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ Req_Frm2 : 2|1@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2290418213 Log_Res_Frm0_RL1: 8 RearLeft1
+BO_ 805 MotorControllerPowerStatus: 8 MotorController
  SG_ battery_voltage : 0|10@1+ (1,0) [0|0] "" Vector__XXX
  SG_ battery_current : 10|9@1+ (1,0) [0|0] "" Vector__XXX
  SG_ battery_current_direction : 19|1@1+ (1,0) [0|0] "" Vector__XXX
@@ -55,7 +55,7 @@ BO_ 2290418213 Log_Res_Frm0_RL1: 8 RearLeft1
  SG_ pwm_duty : 47|10@1+ (1,0) [0|0] "" Vector__XXX
  SG_ lead_angle : 57|7@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2291466789 Log_Res_Frm1_RL1: 5 RearLeft1
+BO_ 789 MotorControllerDriveStatus: 5 MotorController
  SG_ power_mode : 0|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ control_mode : 1|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ accelerator_vr_position : 2|10@1+ (1,0) [0|0] "" Vector__XXX
@@ -65,7 +65,7 @@ BO_ 2291466789 Log_Res_Frm1_RL1: 5 RearLeft1
  SG_ drive_action_status : 36|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ regen_status : 38|1@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 2292515365 Log_Res_Frm2_RL1: 5 RearLeft1
+BO_ 277 MotorControllerError: 5 MotorController
  SG_ analog_sensor_err : 0|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ motor_current_sensor_u_err : 1|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ motor_current_sensor_w_err : 2|1@1+ (1,0) [0|0] "" Vector__XXX
