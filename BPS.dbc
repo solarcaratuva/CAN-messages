@@ -37,14 +37,14 @@ BU_: BPS
 
 
 BO_ 1030 BPSPackInformation: 6 BPS
- SG_ pack_voltage : -1|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ pack_voltage : 15|16@0+ (1,0) [0|0] "" Vector__XXX
  SG_ pack_current : 15|16@0+ (1,0) [0|0] "" Vector__XXX
  SG_ pack_soc : 39|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ discharge_relay : 40|1@0+ (1,0) [0|0] "" Vector__XXX
  SG_ charge_relay : 41|1@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1046 BPSCellVoltage: 6 BPS
- SG_ low_cell_voltage : -1|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ low_cell_voltage : 15|16@0+ (1,0) [0|0] "" Vector__XXX
  SG_ low_cell_voltage_id : 23|8@0+ (1,0) [0|0] "" Vector__XXX
  SG_ high_cell_voltage : 23|16@0+ (1,0) [0|0] "" Vector__XXX
  SG_ high_cell_voltage_id : 47|8@0+ (1,0) [0|0] "" Vector__XXX
@@ -76,7 +76,7 @@ BO_ 262 BPSError: 3 BPS
  SG_ charger_safety_relay_fault : 17|1@0+ (1,0) [0|0] "" Vector__XXX
  SG_ internal_memory_fault : 18|1@0+ (1,0) [0|0] "" Vector__XXX
  SG_ internal_thermistor_fault : 19|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ internal_logic_fault : 20|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ internal_logic_fault : 20|1@0+ (1,0) [0|0] "" Vector__XXX
 
 
 
