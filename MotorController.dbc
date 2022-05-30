@@ -41,50 +41,50 @@ BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ NewSignal_0039 : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 818 MotorControllerFrameRequest: 1 Motor
- SG_ power_status_frame : 0|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ drive_status_frame : 1|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ error_frame : 2|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ power_status_frame : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ drive_status_frame : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ error_frame : 2|1@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 805 MotorControllerPowerStatus: 8 MotorController
- SG_ battery_voltage : 9|10@0+ (1,0) [0|0] "" Vector__XXX
- SG_ battery_current : 2|9@0+ (1,0) [0|0] "" Vector__XXX
- SG_ battery_current_direction : 19|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ motor_current : 13|10@0+ (1,0) [0|0] "" Vector__XXX
- SG_ fet_temperature : 18|5@0+ (1,0) [0|0] "" Vector__XXX
- SG_ motor_speed : 30|12@0+ (1,0) [0|0] "" Vector__XXX
- SG_ pwm_duty : 24|10@0+ (1,0) [0|0] "" Vector__XXX
- SG_ lead_angle : 63|7@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ battery_voltage : 0|10@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ battery_current : 10|9@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ battery_current_direction : 19|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ motor_current : 20|10@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ fet_temperature : 30|5@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ motor_speed : 35|12@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pwm_duty : 47|10@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lead_angle : 57|7@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 789 MotorControllerDriveStatus: 5 MotorController
- SG_ power_mode : 0|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ control_mode : 1|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ accelerator_vr_position : 11|10@0+ (1,0) [0|0] "" Vector__XXX
- SG_ regen_vr_position : 5|10@0+ (1,0) [0|0] "" Vector__XXX
- SG_ digital_sw_position : 9|4@0+ (1,0) [0|0] "" Vector__XXX
- SG_ output_target_value : 19|10@0+ (1,0) [0|0] "" Vector__XXX
- SG_ drive_action_status : 37|2@0+ (1,0) [0|0] "" Vector__XXX
- SG_ regen_status : 38|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ power_mode : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ control_mode : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ accelerator_vr_position : 2|10@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ regen_vr_position : 12|10@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ digital_sw_position : 22|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ output_target_value : 26|10@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ drive_action_status : 36|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ regen_status : 38|1@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 277 MotorControllerError: 5 MotorController
- SG_ analog_sensor_err : 0|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ motor_current_sensor_u_err : 1|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ motor_current_sensor_w_err : 2|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ fet_thermistor_err : 3|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ battery_voltage_sensor_err : 5|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ battery_current_sensor_err : 6|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ battery_current_sensor_adj_err : 7|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ motor_current_sensor_adj_err : 8|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ accelerator_position_err : 9|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ controller_voltage_sensor_err : 11|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ power_system_err : 16|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ overcurrent_err : 17|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ overvoltage_err : 19|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ overcurrent_limit : 21|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ motor_system_err : 24|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ motor_lock : 25|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ hall_sensor_short : 26|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ hall_sensor_open : 27|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ overheat_level : 33|2@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ analog_sensor_err : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ motor_current_sensor_u_err : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ motor_current_sensor_w_err : 2|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ fet_thermistor_err : 3|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ battery_voltage_sensor_err : 5|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ battery_current_sensor_err : 6|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ battery_current_sensor_adj_err : 7|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ motor_current_sensor_adj_err : 8|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ accelerator_position_err : 9|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ controller_voltage_sensor_err : 11|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ power_system_err : 16|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ overcurrent_err : 17|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ overvoltage_err : 19|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ overcurrent_limit : 21|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ motor_system_err : 24|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ motor_lock : 25|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ hall_sensor_short : 26|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ hall_sensor_open : 27|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ overheat_level : 32|2@1+ (1,0) [0|0] "" Vector__XXX
 
 
 
