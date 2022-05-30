@@ -76,7 +76,7 @@ BO_ 262 BPSError: 3 BPS
  SG_ charger_safety_relay_fault : 17|1@0+ (1,0) [0|0] "" Vector__XXX
  SG_ internal_memory_fault : 18|1@0+ (1,0) [0|0] "" Vector__XXX
  SG_ internal_thermistor_fault : 19|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ internal_logic_fault : 20|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ internal_logic_fault : 20|1@1+ (1,0) [0|0] "" Vector__XXX
 
 
 

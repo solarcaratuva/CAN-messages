@@ -70,10 +70,10 @@ BO_ 1092 SolarVoltage: 8 Solar
  SG_ panel4_voltage : 47|16@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1108 SolarTemp: 8 Solar
- SG_ panel1_temp : 0|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ panel2_temp : 16|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ panel3_temp : 32|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ panel4_temp : 48|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ panel1_temp : -1|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ panel2_temp : 15|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ panel3_temp : 31|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ panel4_temp : 47|16@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1124 SolarPhoto: 8 Solar
  SG_ panel1_photo : -1|16@0+ (1,0) [0|0] "" Vector__XXX
