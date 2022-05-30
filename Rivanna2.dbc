@@ -45,13 +45,13 @@ BO_ 291 PowerAuxError: 8 PowerAux
  SG_ right_turn_error : 5|1@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 513 ECUMotorCommands: 4 ECU
- SG_ throttle : 0|8@1+ (1,0) [0|0] "" Vector__XXX
- SG_ regen : 8|8@1+ (1,0) [0|0] "" Vector__XXX
- SG_ cruise_control_speed : 16|8@1+ (1,0) [0|0] "" Vector__XXX
- SG_ cruise_control_en : 24|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ forward_en : 25|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ reverse_en : 26|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ motor_on : 27|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ throttle : 0|9@1+ (1,0) [0|256] "" Vector__XXX
+ SG_ regen : 9|9@1+ (1,0) [0|256] "" Vector__XXX
+ SG_ cruise_control_speed : 18|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ cruise_control_en : 26|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ forward_en : 27|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reverse_en : 28|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ motor_on : 29|1@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 769 ECUPowerAuxCommands: 1 ECU
  SG_ hazards : 0|1@1+ (1,0) [0|0] "" Vector__XXX
