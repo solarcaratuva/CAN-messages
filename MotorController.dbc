@@ -38,7 +38,6 @@ BU_: Motor MotorController
 
 BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ RFU : 32|8@1+ (1,0) [0|0] "" Vector__XXX
- SG_ NewSignal_0039 : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 818 MotorControllerFrameRequest: 1 Motor
  SG_ power_status_frame : 0|1@1+ (1,0) [0|0] "" Vector__XXX
@@ -62,7 +61,7 @@ BO_ 789 MotorControllerDriveStatus: 5 MotorController
  SG_ regen_vr_position : 12|10@1+ (1,0) [0|0] "" Vector__XXX
  SG_ digital_sw_position : 22|4@1+ (1,0) [0|0] "" Vector__XXX
  SG_ output_target_value : 26|10@1+ (1,0) [0|0] "" Vector__XXX
- SG_ drive_action_status : 36|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ motor_status : 36|2@1+ (1,0) [0|0] "" Vector__XXX
  SG_ regen_status : 38|1@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 277 MotorControllerError: 5 MotorController
