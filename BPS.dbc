@@ -37,16 +37,16 @@ BU_: BPS
 
 
 BO_ 1030 BPSPackInformation: 6 BPS
- SG_ pack_voltage : 7|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ pack_current : 23|16@0+ (1,0) [0|0] "" Vector__XXX
- SG_ pack_soc : 39|8@0+ (1,0) [0|0] "" Vector__XXX
- SG_ discharge_relay : 41|1@0+ (1,0) [0|0] "" Vector__XXX
- SG_ charge_relay : 40|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ pack_voltage : 7|16@0+ (0.01,0) [0|0] "" Vector__XXX
+ SG_ pack_current : 23|16@0+ (0.1,0) [0|0] "" Vector__XXX
+ SG_ pack_soc : 39|8@0+ (0.5,0) [0|0] "" Vector__XXX
+ SG_ discharge_relay : 40|1@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ charge_relay : 41|1@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1046 BPSCellVoltage: 6 BPS
- SG_ low_cell_voltage : 7|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ low_cell_voltage : 7|16@0+ (0.0001,0) [0|0] "" Vector__XXX
  SG_ low_cell_voltage_id : 23|8@0+ (1,0) [0|0] "" Vector__XXX
- SG_ high_cell_voltage : 31|16@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ high_cell_voltage : 31|16@0+ (0.0001,0) [0|0] "" Vector__XXX
  SG_ high_cell_voltage_id : 47|8@0+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1062 BPSCellTemperature: 4 BPS
@@ -80,6 +80,7 @@ BO_ 262 BPSError: 3 BPS
 
 
 
+CM_ SG_ 1030 pack_voltage "Pack Summed Voltage";
 BA_DEF_  "BusType" STRING ;
 BA_DEF_DEF_  "BusType" "CAN";
 
