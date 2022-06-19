@@ -1,2 +1,2 @@
 # CAN-messages
-CAN messages for Rivanna2
+CAN message definitions for Rivanna2
