@@ -40,8 +40,14 @@ BO_ 1030 BPSPackInformation: 6 BPS
  SG_ pack_voltage : 0|16@1+ (0.01,0) [0|0] "" Vector__XXX
  SG_ pack_current : 16|16@1+ (0.1,0) [0|0] "" Vector__XXX
  SG_ pack_soc : 32|8@1+ (0.5,0) [0|0] "" Vector__XXX
- SG_ discharge_relay : 40|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ charge_relay : 41|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ discharge_relay_status : 40|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ charge_relay_status : 41|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ charger_safety_status : 42|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ dtc_status : 43|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ multipurpose_input_signal_status : 44|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ always_on_signal_status : 45|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ is_ready_signal_status : 46|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ is_charging_signal_status : 47|1@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1046 BPSCellVoltage: 6 BPS
  SG_ low_cell_voltage : 0|16@1+ (0.0001,0) [0|0] "" Vector__XXX
