@@ -40,7 +40,7 @@ BO_ 291 PowerAuxError: 8 PowerAux
  SG_ fan_error : 0|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ brake_light_error : 1|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ headlight_error : 2|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ bms_strobe_error : 3|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bps_strobe_error : 3|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ left_turn_error : 4|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ right_turn_error : 5|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ bps_error : 6|1@1+ (1,0) [0|0] "" Vector__XXX
