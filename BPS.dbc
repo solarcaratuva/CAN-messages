@@ -37,9 +37,9 @@ BU_: BPS
 
 
 BO_ 1030 BPSPackInformation: 6 BPS
- SG_ pack_voltage : 0|16@1+ (0.01,0) [0|0] "" Vector__XXX
- SG_ pack_current : 16|16@1- (0.1,0) [0|0] "" Vector__XXX
- SG_ pack_soc : 32|8@1+ (0.5,0) [0|0] "" Vector__XXX
+ SG_ pack_voltage : 0|16@1+ (0.01,0) [0|0] "V" Vector__XXX
+ SG_ pack_current : 16|16@1- (0.1,0) [0|0] "A" Vector__XXX
+ SG_ pack_soc : 32|8@1+ (0.5,0) [0|0] "%" Vector__XXX
  SG_ discharge_relay_status : 40|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ charge_relay_status : 41|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ charger_safety_status : 42|1@1+ (1,0) [0|0] "" Vector__XXX
@@ -50,15 +50,15 @@ BO_ 1030 BPSPackInformation: 6 BPS
  SG_ is_charging_signal_status : 47|1@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1046 BPSCellVoltage: 6 BPS
- SG_ low_cell_voltage : 0|16@1+ (0.0001,0) [0|0] "" Vector__XXX
+ SG_ low_cell_voltage : 0|16@1+ (0.0001,0) [0|0] "V" Vector__XXX
  SG_ low_cell_voltage_id : 16|8@1+ (1,0) [0|0] "" Vector__XXX
- SG_ high_cell_voltage : 24|16@1+ (0.0001,0) [0|0] "" Vector__XXX
+ SG_ high_cell_voltage : 24|16@1+ (0.0001,0) [0|0] "V" Vector__XXX
  SG_ high_cell_voltage_id : 40|8@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1062 BPSCellTemperature: 4 BPS
- SG_ low_temperature : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ low_temperature : 0|8@1+ (1,0) [0|0] "°C" Vector__XXX
  SG_ low_thermistor_id : 8|8@1+ (1,0) [0|0] "" Vector__XXX
- SG_ high_temperature : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ high_temperature : 16|8@1+ (1,0) [0|0] "°C" Vector__XXX
  SG_ high_thermistor_id : 24|8@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 262 BPSError: 3 BPS
