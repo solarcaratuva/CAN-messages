@@ -36,48 +36,21 @@ BS_:
 BU_: ECU Motor PowerAux Solar MotorController
 
 
-BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
- SG_ panel1_voltage : 0|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ panel2_voltage : 16|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ panel3_voltage : 32|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ panel4_voltage : 48|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ panel1_temp : 0|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ panel2_temp : 16|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ panel3_temp : 32|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ panel4_temp : 48|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ panel1_photo : 0|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ panel2_photo : 16|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ panel3_photo : 32|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ panel4_photo : 48|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ total_current : 0|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ forward_en : 27|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ reverse_en : 28|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ motor_on : 29|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ fan_error : 0|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ bps_error : 6|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ right_turn_error : 5|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ left_turn_error : 4|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ bps_strobe_error : 3|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ headlight_error : 2|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ brake_light_error : 1|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ headlights : 2|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ brake_lights : 1|1@1+ (1,0) [0|0] "" Vector__XXX
-
-BO_ 291 AuxBatteryStatus: 2 PowerAux
+BO_ 256 AuxBatteryStatus: 2 PowerAux
  SG_ aux_voltage : 0|9@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 513 MotorCommands: 8 ECU
+BO_ 512 MotorCommands: 8 ECU
  SG_ throttle_pedal : 40|9@1+ (1,0) [0|0] "" Vector__XXX
- SG_ regen_braking : 31|9@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ regen_braking : 31|9@1+ (1,0) [0|256] "" Vector__XXX
  SG_ cruise_speed : 22|9@1+ (1,0) [0|0] "" Vector__XXX
  SG_ cruise_drive : 3|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ throttle : 13|9@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ throttle : 13|9@1+ (1,0) [0|256] "" Vector__XXX
  SG_ brake_pedal : 4|9@1+ (1,0) [0|0] "" Vector__XXX
  SG_ manual_drive : 2|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ regen_drive : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ regen_drive : 1|1@1+ (1,0) [0|256] "" Vector__XXX
  SG_ braking : 0|1@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 769 DashboardCommands: 1 ECU
+BO_ 768 DashboardCommands: 1 ECU
  SG_ hazards : 0|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ left_turn_signal : 1|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ right_turn_signal : 2|1@1+ (1,0) [0|0] "" Vector__XXX
