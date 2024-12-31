@@ -13,3 +13,4 @@ CAN Messages for Rivanna3. Messages from Rivanna2 are under the Rivanna2 branch.
 ## Use
 1. Use the *Kvaser Database Editor* to modify or create DBC files that define our CAN messages
 2. To generate C CAN structs, run `cantools generate_c_source path`, replacing `path` with the path of the DBC file
+3. To generate the 'wrapper' header files for each message type, run `py generate.py {DBC file path}`
