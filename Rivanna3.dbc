@@ -36,9 +36,8 @@ BS_:
 BU_: ECU Motor PowerAux Solar MotorController
 
 
-BO_ 256 AuxBatteryStatus: 3 PowerAux
- SG_ aux_voltage : 0|16@1+ (1,0) [0|12000] "mV" Vector__XXX
- SG_ aux_percent_full : 16|8@1+ (1,0) [0|0] "hex%" Vector__XXX
+BO_ 256 AuxBatteryStatus: 2 PowerAux
+ SG_ aux_voltage : 0|9@1+ (1,0) [0|256] "" Vector__XXX
 
 BO_ 512 MotorCommands: 8 ECU
  SG_ throttle_pedal : 40|9@1+ (1,0) [0|256] "" Vector__XXX
@@ -59,6 +58,11 @@ BO_ 768 DashboardCommands: 1 ECU
  SG_ cruise_inc : 4|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ cruise_en : 5|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ cruise_dec : 6|1@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1024 Heartbeat: 8 Vector__XXX
+ SG_ FromWheelBoard : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ FromPowerBoard : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ FromTelemetryBoard : 2|1@1+ (1,0) [0|0] "" Vector__XXX
 
 
 
