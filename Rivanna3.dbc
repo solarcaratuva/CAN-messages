@@ -65,6 +65,9 @@ BO_ 1024 Heartbeat: 8 Vector__XXX
  SG_ FromPowerBoard : 1|1@1+ (1,0) [0|0] "" Vector__XXX
  SG_ FromTelemetryBoard : 2|1@1+ (1,0) [0|0] "" Vector__XXX
 
+BO_ 1280 ChargingMode: 1 Vector__XXX
+ SG_ ChargingModeEnable : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+
 
 
 BA_DEF_  "BusType" STRING ;
