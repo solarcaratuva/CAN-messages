@@ -33,60 +33,41 @@ NS_ :
 
 BS_:
 
-BU_: BPS
+BU_: BMS Third_Party_Device
 
 
-BO_ 1030 BPSPackInformation: 6 BPS
- SG_ pack_voltage : 0|16@1+ (0.01,0) [0|0] "V" Vector__XXX
- SG_ pack_current : 16|16@1- (0.1,0) [0|0] "A" Vector__XXX
- SG_ pack_soc : 32|8@1+ (0.5,0) [0|0] "%" Vector__XXX
- SG_ discharge_relay_status : 40|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ charge_relay_status : 41|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ charger_safety_status : 42|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ dtc_status : 43|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ multipurpose_input_signal_status : 44|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ always_on_signal_status : 45|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ is_ready_signal_status : 46|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ is_charging_signal_status : 47|1@1+ (1,0) [0|0] "" Vector__XXX
+BO_ 1030 MSGID_0X406: 6 BMS
+ SG_ pack_voltage : 7|16@0+ (0.1,0) [0|0] "Volts"  Third_Party_Device
+ SG_ Pack_Current : 23|16@0+ (0.1,0) [0|0] "Amps"  Third_Party_Device
+ SG_ Pack_SOC : 39|8@0+ (0.5,0) [0|0] "Percent"  Third_Party_Device
+ SG_ discharge_relay_status : 40|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ charge_relay_status : 41|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ Charger_Safety : 42|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ Charge_Power_Signal : 43|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ Balancing_Active : 44|1@1+ (1,0) [0|1] ""  Third_Party_Device
 
-BO_ 1046 BPSCellVoltage: 6 BPS
- SG_ low_cell_voltage : 0|16@1+ (0.0001,0) [0|0] "V" Vector__XXX
- SG_ low_cell_voltage_id : 16|8@1+ (1,0) [0|0] "" Vector__XXX
- SG_ high_cell_voltage : 24|16@1+ (0.0001,0) [0|0] "V" Vector__XXX
- SG_ high_cell_voltage_id : 40|8@1+ (1,0) [0|0] "" Vector__XXX
-
-BO_ 1062 BPSCellTemperature: 4 BPS
- SG_ low_temperature : 0|8@1+ (1,0) [0|0] "°C" Vector__XXX
- SG_ low_thermistor_id : 8|8@1+ (1,0) [0|0] "" Vector__XXX
- SG_ high_temperature : 16|8@1+ (1,0) [0|0] "°C" Vector__XXX
- SG_ high_thermistor_id : 24|8@1+ (1,0) [0|0] "" Vector__XXX
-
-BO_ 262 BPSError: 3 BPS
- SG_ internal_communications_fault : 0|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ internal_conversion_fault : 1|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ weak_cell_fault : 2|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ low_cell_voltage_fault : 3|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ open_wiring_fault : 4|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ current_sensor_fault : 5|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ pack_voltage_sensor_fault : 6|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ weak_pack_fault : 7|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ voltage_redundancy_fault : 8|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ fan_monitor_fault : 9|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ thermistor_fault : 10|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ CANBUS_communications_fault : 11|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ always_on_supply_fault : 12|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ high_voltage_isolation_fault : 13|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ power_supply_12v_fault : 14|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ charge_limit_enforcement_fault : 15|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ discharge_limit_enforcement_fault : 16|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ charger_safety_relay_fault : 17|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ internal_memory_fault : 18|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ internal_thermistor_fault : 19|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ internal_logic_fault : 20|1@1+ (1,0) [0|0] "" Vector__XXX
+BO_ 262 MSGID_0X106: 3 BMS
+ SG_ DTC_P0A1F_Internal_Cell_Communication_Fault : 0|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ Weak_Cell_Fault : 1|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ Low_Cell_Voltage_Fault : 2|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ Cell_Open_Wiring_Fault : 3|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ Current_Sensor_Fault : 4|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ Weak_Pack_Fault : 5|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ Thermistor_Fault : 6|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ CAN_Communication_Fault : 7|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ Redundant_Power_Supply_Fault : 8|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ High_Voltage_Isolation_Fault : 9|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ ChargeEnable_Relay_Fault : 10|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ DischargeEnable_Relay_Fault : 11|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ Internal_Hardware_Fault : 12|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ DTC_P0A0A_Internal_Heatsink_Thermistor_Fault : 13|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ Internal_Logic_Fault : 14|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ DTC_P0A0C_Highest_Cell_Voltage_Too_High_Fault : 16|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ DTC_P0A0E_Lowest_Cell_Voltage_Too_Low_Fault : 17|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ Pack_Too_Hot_Fault : 18|1@1+ (1,0) [0|1] ""  Third_Party_Device
 
 
 
-CM_ SG_ 1030 pack_voltage "Pack Summed Voltage";
-BA_DEF_  "BusType" STRING ;
-BA_DEF_DEF_  "BusType" "CAN";
+CM_ BO_ 1030 "This ID Transmits at 8 ms.";
+CM_ BO_ 262 "This ID Transmits at 8 ms.";
 
