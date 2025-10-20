@@ -87,4 +87,23 @@ BO_ 277 MotorControllerError: 5 MotorController
 
 
 
+CM_ SG_ 277 analog_sensor_err "fault";
+CM_ SG_ 277 motor_current_sensor_u_err "fault";
+CM_ SG_ 277 motor_current_sensor_w_err "fault";
+CM_ SG_ 277 fet_thermistor_err "fault";
+CM_ SG_ 277 battery_voltage_sensor_err "fault";
+CM_ SG_ 277 battery_current_sensor_err "fault";
+CM_ SG_ 277 battery_current_sensor_adj_err "fault";
+CM_ SG_ 277 motor_current_sensor_adj_err "fault";
+CM_ SG_ 277 accelerator_position_err "fault";
+CM_ SG_ 277 controller_voltage_sensor_err "fault";
+CM_ SG_ 277 power_system_err "fault";
+CM_ SG_ 277 overcurrent_err "fault";
+CM_ SG_ 277 overvoltage_err "fault";
+CM_ SG_ 277 overcurrent_limit "fault";
+CM_ SG_ 277 motor_system_err "fault";
+CM_ SG_ 277 motor_lock "fault";
+CM_ SG_ 277 hall_sensor_short "fault";
+CM_ SG_ 277 hall_sensor_open "fault";
+CM_ SG_ 277 overheat_level "fault";
 
