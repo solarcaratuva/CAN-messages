@@ -70,31 +70,36 @@ def camelcase_to_snakecase(camelcase: str) -> str:
     return ''.join(result)
 
 
-def make_struct_text(db_name: str, message_name_camelcase: str, signals: list[str]) -> str:
+def make_struct_text(db_name: str, message_name_camelcase: str, signals: list[str], faults: list[str]) -> str:
     message_name_snakecase = camelcase_to_snakecase(message_name_camelcase)
     signals_formatted_string = ", ".join([f"{signal} %u" for signal in signals])
     signals_variable_string = ", ".join(signals)
+    faults_string = " || ".join(faults) + ";" if len(faults) > 0 else "0; // this message has no fault signals"
 
     return f"""
-typedef struct {message_name_camelcase} : CANStruct, {db_name}_{message_name_snakecase}_t {{
-    void serialize(CANMessage *message) {{
+typedef struct {message_name_camelcase} : CanMessage, {db_name}_{message_name_snakecase}_t {{
+    void serialize(SerializedCanMessage *message) {{
         {db_name}_{message_name_snakecase}_pack(message->data, this,
             {db_name.upper()}_{message_name_snakecase.upper()}_LENGTH);
         message->len = {db_name.upper()}_{message_name_snakecase.upper()}_LENGTH;
+        message->id = {db_name.upper()}_{message_name_snakecase.upper()}_FRAME_ID;
     }}
 
-    void deserialize(CANMessage *message) {{
+    void deserialize(SerializedCanMessage *message) {{
         {db_name}_{message_name_snakecase}_unpack(this, message->data,
             {db_name.upper()}_{message_name_snakecase.upper()}_LENGTH);
     }}
 
-    uint32_t get_message_ID() {{ return {db_name.upper()}_{message_name_snakecase.upper()}_FRAME_ID; }}
+    static uint16_t get_message_ID() {{ return {db_name.upper()}_{message_name_snakecase.upper()}_FRAME_ID; }}
 
-    void log(int level) {{
-        log_at_level(
-            level,
+    void log_msg(LogLevel level) const {{
+        log(level, __FILE__, __LINE__,
             "{message_name_camelcase}: {signals_formatted_string}",
             {signals_variable_string});
+    }}
+
+    bool has_active_fault() {{
+        return {faults_string}
     }}
 }} {message_name_camelcase};
 """
@@ -105,16 +110,17 @@ def make_header_file_text(db_name: str, messages) -> str:
 #ifndef {db_name}_CAN_Structs
 #define {db_name}_CAN_Structs
 
-#include "CANStruct.h"
-#include "dbc/structs/{db_name}.h"
+#include "can.h"
+#include "can_structs/{db_name}.h"
 #include "log.h"
 """
     
     for message in messages:
         messageName = message.name
         signals = [signal.name for signal in message.signals]
+        faults = [signal.name for signal in message.signals if signal.comment and "fault" in signal.comment.lower()]
 
-        structText = make_struct_text(db_name, messageName, signals)
+        structText = make_struct_text(db_name, messageName, signals, faults)
         text += structText + "\n"
 
     text += "#endif"
@@ -137,7 +143,7 @@ def main() -> None:
 
     headerText = make_header_file_text(db_name.lower(), db.messages)
 
-    with open(f"{db_name}CANStructs.h", "w") as file:
+    with open(f"{db_name}CanStructs.h", "w") as file:
         file.write(headerText)
 
     print("Done")
