@@ -59,14 +59,17 @@ def camelcase_to_snakecase(camelcase: str) -> str:
             # Add underscore before uppercase letter, but not if:
             # 1. Previous character was also uppercase and next character is lowercase (handles acronyms)
             # 2. We're at the beginning
-            prev_is_upper = i > 0 and camelcase[i-1].isupper()
+            prev_char = camelcase[i-1]
+            prev_is_upper = prev_char.isupper()
+            prev_is_digit = prev_char.isdigit()
             next_is_lower = i < len(camelcase) - 1 and camelcase[i+1].islower()
             
-            if not (prev_is_upper and not next_is_lower):
+            # Add underscore if previous is a digit, or if not in the middle of an acronym
+            if prev_is_digit or (not (prev_is_upper and not next_is_lower)):
                 result.append('_')
         
         result.append(char.lower())
-    
+        
     return ''.join(result)
 
 
@@ -141,7 +144,8 @@ def main() -> None:
 
     check_formatting(db)
 
-    headerText = make_header_file_text(db_name.lower(), db.messages)
+    db_name_snake = camelcase_to_snakecase(db_name)
+    headerText = make_header_file_text(db_name_snake, db.messages)
 
     with open(f"{db_name}CanStructs.h", "w") as file:
         file.write(headerText)
