@@ -38,13 +38,13 @@ BU_: BMS Third_Party_Device
 
 BO_ 1030 BpsStatus: 6 BMS
  SG_ pack_voltage : 7|16@0+ (0.1,0) [0|0] "Volts"  Third_Party_Device
- SG_ Pack_Current : 23|16@0+ (0.1,0) [0|0] "Amps"  Third_Party_Device
- SG_ Pack_SOC : 39|8@0+ (0.5,0) [0|0] "Percent"  Third_Party_Device
+ SG_ pack_current : 23|16@0+ (0.1,0) [0|0] "Amps"  Third_Party_Device
+ SG_ pack_soc : 39|8@0+ (0.5,0) [0|0] "Percent"  Third_Party_Device
  SG_ discharge_relay_status : 40|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ charge_relay_status : 41|1@1+ (1,0) [0|1] ""  Third_Party_Device
- SG_ Charger_Safety : 42|1@1+ (1,0) [0|1] ""  Third_Party_Device
- SG_ Charge_Power_Signal : 43|1@1+ (1,0) [0|1] ""  Third_Party_Device
- SG_ Balancing_Active : 44|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ charger_safety : 42|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ charge_power_signal : 43|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ balancing_active : 44|1@1+ (1,0) [0|1] ""  Third_Party_Device
 
 BO_ 262 BpsError: 3 BMS
  SG_ internal_cell_communication_fault : 0|1@1+ (1,0) [0|1] ""  Third_Party_Device
@@ -54,7 +54,7 @@ BO_ 262 BpsError: 3 BMS
  SG_ current_sensor_fault : 4|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ weak_pack_fault : 5|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ thermistor_fault : 6|1@1+ (1,0) [0|1] ""  Third_Party_Device
- SG_ CAN_communication_fault : 7|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ can_communication_fault : 7|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ redundant_power_supply_fault : 8|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ high_voltage_isolation_fault : 9|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ charge_enable_relay_fault : 10|1@1+ (1,0) [0|1] ""  Third_Party_Device
@@ -75,7 +75,7 @@ CM_ SG_ 262 low_cell_voltage_fault "fault";
 CM_ SG_ 262 current_sensor_fault "fault";
 CM_ SG_ 262 weak_pack_fault "fault";
 CM_ SG_ 262 thermistor_fault "fault";
-CM_ SG_ 262 CAN_communication_fault "fault";
+CM_ SG_ 262 can_communication_fault "fault";
 CM_ SG_ 262 redundant_power_supply_fault "fault";
 CM_ SG_ 262 high_voltage_isolation_fault "fault";
 CM_ SG_ 262 charge_enable_relay_fault "fault";
