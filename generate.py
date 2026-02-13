@@ -76,7 +76,7 @@ def camelcase_to_snakecase(camelcase: str) -> str:
 def make_struct_text(db_name: str, message_name_camelcase: str, signals: list[str], faults: list[str]) -> str:
     message_name_snakecase = camelcase_to_snakecase(message_name_camelcase)
     signals_formatted_string = ", ".join([f"{signal} %u" for signal in signals])
-    signals_variable_string = ", ".join(signals)
+    signals_variable_string = ", ".join([camelcase_to_snakecase(signal) for signal in signals])
     faults_string = " || ".join(faults) + ";" if len(faults) > 0 else "0; // this message has no fault signals"
 
     return f"""
@@ -97,7 +97,7 @@ typedef struct {message_name_camelcase} : CanMessage, {db_name}_{message_name_sn
 
     void log_msg(LogLevel level) const {{
         log(level, __FILE__, __LINE__,
-            "{message_name_camelcase}: {signals_formatted_string}",
+            "{message_name_camelcase}: {signals_formatted_string}"{',' if len(signals) > 0 else ''}
             {signals_variable_string});
     }}
 
@@ -114,13 +114,13 @@ def make_header_file_text(db_name: str, messages) -> str:
 #define {db_name}_CAN_Structs
 
 #include "can.h"
-#include "can_structs/{db_name}.h"
+#include "{db_name}.h"
 #include "log.h"
 """
     
     for message in messages:
         messageName = message.name
-        signals = [signal.name for signal in message.signals]
+        signals = [signal.name for signal in message.signals if not signal.is_float]
         faults = [signal.name for signal in message.signals if signal.comment and "fault" in signal.comment.lower()]
 
         structText = make_struct_text(db_name, messageName, signals, faults)
