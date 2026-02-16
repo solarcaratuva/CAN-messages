@@ -88,7 +88,7 @@ typedef struct {message_name_camelcase} : CanMessage, {db_name}_{message_name_sn
         message->id = {db_name.upper()}_{message_name_snakecase.upper()}_FRAME_ID;
     }}
 
-    void deserialize(SerializedCanMessage *message) {{
+    void deserialize(const SerializedCanMessage *message) {{
         {db_name}_{message_name_snakecase}_unpack(this, message->data,
             {db_name.upper()}_{message_name_snakecase.upper()}_LENGTH);
     }}
