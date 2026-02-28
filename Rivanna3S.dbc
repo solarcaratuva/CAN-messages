@@ -36,17 +36,6 @@ BS_:
 BU_: ECU Motor PowerAux Solar MotorController
 
 
-BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
- SG_ block_requested : 6|16@1+ (1,0) [0|0] "" Vector__XXX
- SG_ s1_waiting_pack_voltage : 0|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ s1_waiting_cont12 : 1|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ s2_waiting_threshold_motor : 2|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ s2_waiting_threshold_mppt : 3|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ s2_legacy_sleep_motor : 4|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ s2_legacy_sleep_mppt : 5|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ s3_final_sleep_motor : 6|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ s3_final_sleep_mppt : 7|1@1+ (1,0) [0|0] "" Vector__XXX
-
 BO_ 100 AuxBatteryStatus: 3 PowerAux
  SG_ aux_voltage : 0|16@1+ (1,0) [0|0] "mV" Vector__XXX
  SG_ percent_full : 16|8@1+ (1,0) [0|0] "hex%" Vector__XXX
@@ -70,12 +59,7 @@ BO_ 300 DashboardCommands: 1 ECU
  SG_ charging_mode_en : 7|1@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 400 Heartbeat: 1 Vector__XXX
- SG_ from_wheel_board : 0|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ from_telemetry_board : 1|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ from_top_dist_board : 2|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ from_bottom_dist_board : 3|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ from_motor_board : 4|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ from_relay_board : 5|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ source : 0|8@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 500 PedalStatus: 3 Vector__XXX
  SG_ throttle_pedal : 0|12@1+ (1,0) [0|0] "" Vector__XXX
