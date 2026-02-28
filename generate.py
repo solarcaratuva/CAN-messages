@@ -95,6 +95,8 @@ typedef struct {message_name_camelcase} : CanMessage, {db_name}_{message_name_sn
 
     static uint16_t get_message_ID() {{ return {db_name.upper()}_{message_name_snakecase.upper()}_FRAME_ID; }}
 
+    uint16_t ID() const {{ return {db_name.upper()}_{message_name_snakecase.upper()}_FRAME_ID; }}
+
     void log_msg(LogLevel level) const {{
         log(level, __FILE__, __LINE__,
             "{message_name_camelcase}: {signals_formatted_string}"{',' if len(signals) > 0 else ''}
