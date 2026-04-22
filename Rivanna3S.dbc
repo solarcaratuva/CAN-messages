@@ -78,11 +78,13 @@ BO_ 600 PrechargeStatus: 7 Vector__XXX
 BO_ 700 Contactor12Error: 1 Vector__XXX
  SG_ cont12_went_low : 0|1@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 1900 UpdateControl: 1 Vector__XXX
+BO_ 1900 UpdateControl: 5 Vector__XXX
  SG_ target_board : 0|4@1+ (1,0) [0|0] "" Vector__XXX
  SG_ setup : 4|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ complete : 5|1@1+ (1,0) [0|0] "" Vector__XXX
- SG_ failed : 6|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ setup_ack : 5|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ready_for_data : 6|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ done : 7|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ final_crc : 8|32@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 2000 UpdateData: 64 Vector__XXX
  SG_ data : 0|512@1+ (1,0) [0|0] "" Vector__XXX

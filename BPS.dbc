@@ -36,6 +36,10 @@ BS_:
 BU_: BMS Third_Party_Device
 
 
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ lowest_cell_voltage_too_low_fault : 17|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ pack_too_hot_fault : 18|1@1+ (1,0) [0|1] ""  Third_Party_Device
+
 BO_ 1030 BpsStatus: 6 BMS
  SG_ pack_voltage : 7|16@0+ (0.1,0) [0|0] "Volts"  Third_Party_Device
  SG_ pack_current : 23|16@0+ (0.1,0) [0|0] "Amps"  Third_Party_Device
@@ -46,44 +50,42 @@ BO_ 1030 BpsStatus: 6 BMS
  SG_ charge_power_signal : 43|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ balancing_active : 44|1@1+ (1,0) [0|1] ""  Third_Party_Device
 
-BO_ 262 BpsError: 3 BMS
+BO_ 938 BpsError: 3 BMS
  SG_ internal_cell_communication_fault : 0|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ weak_cell_fault : 1|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ low_cell_voltage_fault : 2|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ cell_open_wiring_fault : 3|1@1+ (1,0) [0|1] ""  Third_Party_Device
- SG_ current_sensor_fault : 4|1@1+ (1,0) [0|1] ""  Third_Party_Device
- SG_ weak_pack_fault : 5|1@1+ (1,0) [0|1] ""  Third_Party_Device
- SG_ thermistor_fault : 6|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ thermistor_fault : 4|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ current_sensor_fault : 5|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ weak_pack_fault : 6|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ can_communication_fault : 7|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ redundant_power_supply_fault : 8|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ high_voltage_isolation_fault : 9|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ charge_enable_relay_fault : 10|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ discharge_enable_relay_fault : 11|1@1+ (1,0) [0|1] ""  Third_Party_Device
- SG_ internal_hardware_fault : 12|1@1+ (1,0) [0|1] ""  Third_Party_Device
- SG_ internal_heatsink_thermistor_fault : 13|1@1+ (1,0) [0|1] ""  Third_Party_Device
- SG_ internal_logic_fault : 14|1@1+ (1,0) [0|1] ""  Third_Party_Device
- SG_ highest_cell_voltage_too_high_fault : 16|1@1+ (1,0) [0|1] ""  Third_Party_Device
- SG_ lowest_cell_voltage_too_low_fault : 17|1@1+ (1,0) [0|1] ""  Third_Party_Device
- SG_ pack_too_hot_fault : 18|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ internal_conversion_fault : 12|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ internal_memory_fault : 13|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ internal_thermistor_fault : 14|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ internal_logic_fault : 15|1@1+ (1,0) [0|1] ""  Third_Party_Device
 
 
 
+CM_ SG_ 3221225472 lowest_cell_voltage_too_low_fault "fault";
+CM_ SG_ 3221225472 pack_too_hot_fault "fault";
 CM_ BO_ 1030 "This ID Transmits at 8 ms.";
-CM_ BO_ 262 "This ID Transmits at 8 ms.";
-CM_ SG_ 262 internal_cell_communication_fault "fault";
-CM_ SG_ 262 low_cell_voltage_fault "fault";
-CM_ SG_ 262 current_sensor_fault "fault";
-CM_ SG_ 262 weak_pack_fault "fault";
-CM_ SG_ 262 thermistor_fault "fault";
-CM_ SG_ 262 can_communication_fault "fault";
-CM_ SG_ 262 redundant_power_supply_fault "fault";
-CM_ SG_ 262 high_voltage_isolation_fault "fault";
-CM_ SG_ 262 charge_enable_relay_fault "fault";
-CM_ SG_ 262 discharge_enable_relay_fault "fault";
-CM_ SG_ 262 internal_hardware_fault "fault";
-CM_ SG_ 262 internal_heatsink_thermistor_fault "fault";
-CM_ SG_ 262 internal_logic_fault "fault";
-CM_ SG_ 262 highest_cell_voltage_too_high_fault "fault";
-CM_ SG_ 262 lowest_cell_voltage_too_low_fault "fault";
-CM_ SG_ 262 pack_too_hot_fault "fault";
+CM_ BO_ 938 "This ID Transmits at 8 ms.";
+CM_ SG_ 938 internal_cell_communication_fault "fault";
+CM_ SG_ 938 low_cell_voltage_fault "fault";
+CM_ SG_ 938 thermistor_fault "fault";
+CM_ SG_ 938 current_sensor_fault "fault";
+CM_ SG_ 938 weak_pack_fault "fault";
+CM_ SG_ 938 can_communication_fault "fault";
+CM_ SG_ 938 redundant_power_supply_fault "";
+CM_ SG_ 938 high_voltage_isolation_fault "fault";
+CM_ SG_ 938 charge_enable_relay_fault "fault";
+CM_ SG_ 938 discharge_enable_relay_fault "fault";
+CM_ SG_ 938 internal_conversion_fault "fault";
+CM_ SG_ 938 internal_memory_fault "fault";
+CM_ SG_ 938 internal_thermistor_fault "fault";
+CM_ SG_ 938 internal_logic_fault "fault";
 
