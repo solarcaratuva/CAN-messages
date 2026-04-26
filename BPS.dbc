@@ -39,6 +39,7 @@ BU_: BMS Third_Party_Device
 BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ lowest_cell_voltage_too_low_fault : 17|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ pack_too_hot_fault : 18|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ reduced_high_soc : 23|1@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1030 BpsStatus: 6 BMS
  SG_ pack_voltage : 7|16@0+ (0.1,0) [0|0] "Volts"  Third_Party_Device
@@ -50,7 +51,7 @@ BO_ 1030 BpsStatus: 6 BMS
  SG_ charge_power_signal : 43|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ balancing_active : 44|1@1+ (1,0) [0|1] ""  Third_Party_Device
 
-BO_ 938 BpsError: 3 BMS
+BO_ 938 BpsError: 4 BMS
  SG_ internal_cell_communication_fault : 0|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ weak_cell_fault : 1|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ low_cell_voltage_fault : 2|1@1+ (1,0) [0|1] ""  Third_Party_Device
@@ -67,6 +68,13 @@ BO_ 938 BpsError: 3 BMS
  SG_ internal_memory_fault : 13|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ internal_thermistor_fault : 14|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ internal_logic_fault : 15|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ reduced_low_soc : 16|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reduced_high_cell_resistance : 17|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reduced_high_temp : 18|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reduced_low_cell_voltage : 19|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reduced_low_pack_voltage : 20|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reduced_voltage_failsafe : 22|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reduced_comms_failsafe : 23|1@1+ (1,0) [0|0] "" Vector__XXX
 
 
 
@@ -88,4 +96,11 @@ CM_ SG_ 938 internal_conversion_fault "fault";
 CM_ SG_ 938 internal_memory_fault "fault";
 CM_ SG_ 938 internal_thermistor_fault "fault";
 CM_ SG_ 938 internal_logic_fault "fault";
+CM_ SG_ 938 reduced_low_soc "fault";
+CM_ SG_ 938 reduced_high_cell_resistance "fault";
+CM_ SG_ 938 reduced_high_temp "fault";
+CM_ SG_ 938 reduced_low_cell_voltage "fault";
+CM_ SG_ 938 reduced_low_pack_voltage "faults";
+CM_ SG_ 938 reduced_voltage_failsafe "fault";
+CM_ SG_ 938 reduced_comms_failsafe "fault";
 
