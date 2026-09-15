@@ -1,4 +1,5 @@
 import cantools as ct
+import subprocess
 import sys
 import os
 
@@ -132,15 +133,30 @@ def make_header_file_text(db_name: str, messages) -> str:
     return text
 
 
+def run_cantools_generate_c_source(path: str) -> bool:
+    """Run `cantools generate_c_source` on the given DBC file to produce its pack/unpack .c/.h. Returns False on failure."""
+    result = subprocess.run([sys.executable, "-m", "cantools", "generate_c_source", path])
+    return result.returncode == 0
+
+
 def main() -> None:
-    if len(sys.argv) != 2:
+    args = sys.argv[1:]
+    skip_c_source = "--skip-c-source" in args
+    args = [arg for arg in args if arg != "--skip-c-source"]
+
+    if len(args) != 1:
         print("ERROR: Must provide a .dbc file as an argument")
         return
-    path = sys.argv[1]
+    path = args[0]
     if not path.endswith(".dbc"):
         print("ERROR: Must be a .dbc file")
         return
-    
+
+    if not skip_c_source:
+        if not run_cantools_generate_c_source(path):
+            print(f"ERROR: cantools generate_c_source failed for {path}")
+            return
+
     db = ct.db.load_file(path)
     db_name = os.path.splitext(os.path.basename(path))[0]
 
