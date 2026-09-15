@@ -37,13 +37,13 @@ BU_: BMS Third_Party_Device
 
 
 BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
- SG_ lowest_cell_voltage_too_low_fault : 17|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ lowest_cell_voltage_too_low_0000 : 17|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ pack_too_hot_fault : 18|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ reduced_high_soc : 23|1@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 1030 BpsStatus: 6 BMS
  SG_ pack_voltage : 7|16@0+ (0.1,0) [0|0] "Volts"  Third_Party_Device
- SG_ pack_current : 23|16@0+ (0.1,0) [0|0] "Amps"  Third_Party_Device
+ SG_ pack_current : 23|16@0- (0.1,0) [0|0] "Amps"  Third_Party_Device
  SG_ pack_soc : 39|8@0+ (0.5,0) [0|0] "Percent"  Third_Party_Device
  SG_ discharge_relay_status : 40|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ charge_relay_status : 41|1@1+ (1,0) [0|1] ""  Third_Party_Device
@@ -52,7 +52,7 @@ BO_ 1030 BpsStatus: 6 BMS
  SG_ balancing_active : 44|1@1+ (1,0) [0|1] ""  Third_Party_Device
 
 BO_ 938 BpsError: 4 BMS
- SG_ internal_cell_communication_fault : 0|1@1+ (1,0) [0|1] ""  Third_Party_Device
+ SG_ internal_cell_communication_0001 : 0|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ weak_cell_fault : 1|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ low_cell_voltage_fault : 2|1@1+ (1,0) [0|1] ""  Third_Party_Device
  SG_ cell_open_wiring_fault : 3|1@1+ (1,0) [0|1] ""  Third_Party_Device
@@ -78,11 +78,11 @@ BO_ 938 BpsError: 4 BMS
 
 
 
-CM_ SG_ 3221225472 lowest_cell_voltage_too_low_fault "fault";
+CM_ SG_ 3221225472 lowest_cell_voltage_too_low_0000 "fault";
 CM_ SG_ 3221225472 pack_too_hot_fault "fault";
 CM_ BO_ 1030 "This ID Transmits at 8 ms.";
 CM_ BO_ 938 "This ID Transmits at 8 ms.";
-CM_ SG_ 938 internal_cell_communication_fault "fault";
+CM_ SG_ 938 internal_cell_communication_0001 "fault";
 CM_ SG_ 938 low_cell_voltage_fault "fault";
 CM_ SG_ 938 thermistor_fault "fault";
 CM_ SG_ 938 current_sensor_fault "fault";
@@ -103,4 +103,8 @@ CM_ SG_ 938 reduced_low_cell_voltage "fault";
 CM_ SG_ 938 reduced_low_pack_voltage "faults";
 CM_ SG_ 938 reduced_voltage_failsafe "fault";
 CM_ SG_ 938 reduced_comms_failsafe "fault";
+BA_DEF_ SG_  "SystemSignalLongSymbol" STRING ;
+BA_DEF_DEF_  "SystemSignalLongSymbol" "";
+BA_ "SystemSignalLongSymbol" SG_ 3221225472 lowest_cell_voltage_too_low_0000 "lowest_cell_voltage_too_low_fault";
+BA_ "SystemSignalLongSymbol" SG_ 938 internal_cell_communication_0001 "internal_cell_communication_fault";
 
