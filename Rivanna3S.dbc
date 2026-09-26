@@ -105,6 +105,10 @@ BO_ 901 VN200AngularRate: 8 Vector__XXX
  SG_ sequence : 48|8@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 902 VN200Acceleration: 8 Vector__XXX
+ SG_ accel_x : 0|16@1- (0.01,0) [0|0] "" Vector__XXX
+ SG_ accel_y : 16|16@1- (0.01,0) [0|0] "" Vector__XXX
+ SG_ accel_z : 32|16@1- (0.01,0) [0|0] "" Vector__XXX
+ SG_ sequence : 48|8@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 903 VN200Position: 8 Vector__XXX
  SG_ latitude : 0|32@1- (1E-07,0) [0|0] "" Vector__XXX
