@@ -74,8 +74,35 @@ def camelcase_to_snakecase(camelcase: str) -> str:
     return ''.join(result)
 
 
-def make_struct_text(db_name: str, message_name_camelcase: str, signals: list[str], faults: list[str]) -> str:
+def make_accessors_text(db_name: str, message_name_snakecase: str, all_signals: list[str]) -> str:
+    """Per-signal physical-value accessors wrapping the cantools encode/decode functions.
+
+    The struct fields themselves stay raw (as on the CAN bus); these convert to and
+    from physical units using the scale/offset baked into the generated encode/decode.
+    """
+
+    text = ""
+
+    for signal in all_signals:
+        # cantools snake_cases signal names for both struct fields and function
+        # names, so a DBC signal that is not already snake_case must be converted
+        # to match (see the check_formatting warning).
+        field = camelcase_to_snakecase(signal)
+        prefix = f"{db_name}_{message_name_snakecase}_{field}"
+        text += f"""
+    double get_{field}() const {{ return {prefix}_decode({field}); }}
+
+    void set_{field}(double value) {{ {field} = {prefix}_encode(value); }}
+
+    bool {field}_in_range() const {{ return {prefix}_is_in_range({field}); }}
+"""
+
+    return text
+
+
+def make_struct_text(db_name: str, message_name_camelcase: str, signals: list[str], all_signals: list[str], faults: list[str]) -> str:
     message_name_snakecase = camelcase_to_snakecase(message_name_camelcase)
+    accessors_string = make_accessors_text(db_name, message_name_snakecase, all_signals)
     signals_formatted_string = ", ".join([f"{signal} %u" for signal in signals])
     signals_variable_string = ", ".join([camelcase_to_snakecase(signal) for signal in signals])
     faults_string = " || ".join(faults) + ";" if len(faults) > 0 else "0; // this message has no fault signals"
@@ -103,7 +130,7 @@ typedef struct {message_name_camelcase} : CanMessage, {db_name}_{message_name_sn
             "{message_name_camelcase}: {signals_formatted_string}"{',' if len(signals) > 0 else ''}
             {signals_variable_string});
     }}
-
+{accessors_string}
     bool has_active_fault() {{
         return {faults_string}
     }}
@@ -124,9 +151,10 @@ def make_header_file_text(db_name: str, messages) -> str:
     for message in messages:
         messageName = message.name
         signals = [signal.name for signal in message.signals if not signal.is_float]
+        all_signals = [signal.name for signal in message.signals]
         faults = [signal.name for signal in message.signals if signal.comment and "fault" in signal.comment.lower()]
 
-        structText = make_struct_text(db_name, messageName, signals, faults)
+        structText = make_struct_text(db_name, messageName, signals, all_signals, faults)
         text += structText + "\n"
 
     text += "#endif"
