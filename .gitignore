@@ -1,4 +1,5 @@
 *.c
 *.h
 .vscode
-__pycache__
+__pycache__/inc/
+/src/

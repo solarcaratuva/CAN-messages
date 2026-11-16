@@ -2,6 +2,10 @@ import cantools as ct
 import subprocess
 import sys
 import os
+import shutil
+
+INC_DIR = "inc"
+SRC_DIR = "src"
 
 
 def is_not_camelcase(name: str) -> bool:
@@ -163,8 +167,17 @@ def make_header_file_text(db_name: str, messages) -> str:
 
 def run_cantools_generate_c_source(path: str) -> bool:
     """Run `cantools generate_c_source` on the given DBC file to produce its pack/unpack .c/.h. Returns False on failure."""
-    result = subprocess.run([sys.executable, "-m", "cantools", "generate_c_source", path])
-    return result.returncode == 0
+    os.makedirs(INC_DIR, exist_ok=True)
+    os.makedirs(SRC_DIR, exist_ok=True)
+    result = subprocess.run([sys.executable, "-m", "cantools", "generate_c_source", "-o", SRC_DIR, path])
+    if result.returncode != 0:
+        return False
+
+    # cantools puts the .h and .c in the same directory; move the .h into inc/
+    for name in os.listdir(SRC_DIR):
+        if name.endswith(".h"):
+            shutil.move(os.path.join(SRC_DIR, name), os.path.join(INC_DIR, name))
+    return True
 
 
 def main() -> None:
@@ -193,7 +206,8 @@ def main() -> None:
     db_name_snake = camelcase_to_snakecase(db_name)
     headerText = make_header_file_text(db_name_snake, db.messages)
 
-    with open(f"{db_name}CanStructs.h", "w") as file:
+    os.makedirs(INC_DIR, exist_ok=True)
+    with open(os.path.join(INC_DIR, f"{db_name}CanStructs.h"), "w") as file:
         file.write(headerText)
 
     print("Done")
