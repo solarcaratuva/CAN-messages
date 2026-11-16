@@ -89,8 +89,10 @@ BO_ 1900 UpdateControl: 5 Vector__XXX
 BO_ 2000 UpdateData: 64 Vector__XXX
  SG_ data : 0|512@1+ (1,0) [0|0] "" Vector__XXX
 
-BO_ 800 OdometryData: 4 Vector__XXX
- SG_ distance : 0|32@1+ (1,0) [0|0] "" Vector__XXX
+BO_ 800 OdometryData: 6 Vector__XXX
+ SG_ rpmdistance : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ veldistance : 16|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ gpsdistance : 32|16@1+ (1,0) [0|0] "" Vector__XXX
 
 BO_ 900 VN200Attitude: 8 Vector__XXX
  SG_ yaw : 0|16@1- (0.01,0) [0|0] "" Vector__XXX
