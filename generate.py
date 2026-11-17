@@ -3,6 +3,7 @@ import subprocess
 import sys
 import os
 import shutil
+import re
 
 INC_DIR = "inc"
 SRC_DIR = "src"
@@ -165,6 +166,29 @@ def make_header_file_text(db_name: str, messages) -> str:
     return text
 
 
+def round_encode_functions(c_path: str) -> None:
+    """Make the cantools-generated *_encode functions round to the nearest raw count.
+
+    cantools emits `(int16_t)(value / 0.1)`, which truncates; since value / 0.1 often
+    lands just below the intended integer (5.9 / 0.1 == 58.99999999999999), raw values
+    come back one count low. Wrap the scaled expression in round() instead. Encoders
+    with no scaling (`(T)(value)`) are left alone.
+    """
+    with open(c_path) as f:
+        text = f.read()
+
+    text = re.sub(
+        r"return \((u?int\d+_t)\)\((value[^;\n]*/[^;\n]*)\);",
+        r"return (\1)round(\2);",
+        text,
+    )
+    if "#include <math.h>" not in text:
+        text = text.replace("#include <string.h>", "#include <math.h>\n#include <string.h>", 1)
+
+    with open(c_path, "w") as f:
+        f.write(text)
+
+
 def run_cantools_generate_c_source(path: str) -> bool:
     """Run `cantools generate_c_source` on the given DBC file to produce its pack/unpack .c/.h. Returns False on failure."""
     os.makedirs(INC_DIR, exist_ok=True)
@@ -175,6 +199,8 @@ def run_cantools_generate_c_source(path: str) -> bool:
 
     # cantools puts the .h and .c in the same directory; move the .h into inc/
     for name in os.listdir(SRC_DIR):
+        if name.endswith(".c"):
+            round_encode_functions(os.path.join(SRC_DIR, name))
         if name.endswith(".h"):
             shutil.move(os.path.join(SRC_DIR, name), os.path.join(INC_DIR, name))
     return True
